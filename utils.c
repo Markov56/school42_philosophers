@@ -64,12 +64,12 @@ void	print_status(t_philo *philo, char *status)
 	pthread_mutex_unlock(&philo->program->write_lock);
 }
 
-void	ft_usleep(int ms)
+void	ft_usleep(t_philo *philo, int ms)
 {
 	long long	start;
 
 	start = get_time();
-	while ((get_time() - start) < ms)
+	while (!is_dead(philo) && (get_time() - start) < ms)
 		usleep(500);
 }
 
@@ -88,23 +88,6 @@ void	take_forks(t_philo *philo)
 	print_status(philo, "has taken a fork");
 	print_status(philo, "has taken a fork");
 }
-// void	take_forks(t_philo *philo)
-// {
-// 	if (philo->id % 2 == 0)
-// 	{
-// 		pthread_mutex_lock(philo->r_fork);
-// 		print_status(philo, "has taken a fork");
-// 		pthread_mutex_lock(philo->l_fork);
-// 		print_status(philo, "has taken a fork");
-// 	}
-// 	else
-// 	{
-// 		pthread_mutex_lock(philo->l_fork);
-// 		print_status(philo, "has taken a fork");
-// 		pthread_mutex_lock(philo->r_fork);
-// 		print_status(philo, "has taken a fork");
-// 	}
-// }
 
 void	drop_forks(t_philo *philo)
 {

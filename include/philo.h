@@ -47,7 +47,7 @@ long long	get_time(void);
 int			init_program(t_program *program, t_config *config);
 void		destroy_program(t_program *program);
 void		print_status(t_philo *philo, char *status);
-void		ft_usleep(int ms);
+void		ft_usleep(t_philo *philo, int ms);
 void		take_forks(t_philo *philo);
 void		drop_forks(t_philo *philo);
 int			is_dead(t_philo *philo);
