@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rmarkov <rmarkov@student.42berlin.de>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/19 17:51:33 by rmarkov           #+#    #+#             */
+/*   Updated: 2026/06/19 17:51:36 by rmarkov          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "include/philo.h"
 
-t_philo *init_philos(t_program *program)
+t_philo	*init_philos(t_program *program)
 {
 	t_philo	*philos;
 	int		i;
@@ -16,7 +28,8 @@ t_philo *init_philos(t_program *program)
 		philos[i].last_meal = program->config->start_time;
 		philos[i].program = program;
 		philos[i].l_fork = &program->forks[i];
-		philos[i].r_fork = &program->forks[(i + 1) % program->config->num_of_philos];
+		philos[i].r_fork = &program->forks[(i + 1) % 
+			program->config->num_of_philos];
 		i++;
 	}
 	return (philos);
@@ -112,7 +125,6 @@ int	main(int argc, char **argv)
 		printf("Error: initialization failed\n");
 		return (1);
 	}
-	// config.start_time = get_time();
 	philos = init_philos(&program);
 	if (!philos)
 	{

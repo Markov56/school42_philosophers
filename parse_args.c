@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse_args.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rmarkov <rmarkov@student.42berlin.de>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/19 17:51:08 by rmarkov           #+#    #+#             */
+/*   Updated: 2026/06/19 17:51:10 by rmarkov          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "include/philo.h"
 
 int	parse_args(t_config *config, int argc, char **argv)
@@ -6,7 +18,7 @@ int	parse_args(t_config *config, int argc, char **argv)
 	config->time_to_die = ft_atoi(argv[2]);
 	config->time_to_eat = ft_atoi(argv[3]);
 	config->time_to_sleep = ft_atoi(argv[4]);
-	if(argc == 6)
+	if (argc == 6)
 		config->times_to_eat = ft_atoi(argv[5]);
 	else
 		config->times_to_eat = -1;

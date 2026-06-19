@@ -1,12 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   philo.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rmarkov <rmarkov@student.42berlin.de>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/19 17:54:34 by rmarkov           #+#    #+#             */
+/*   Updated: 2026/06/19 17:54:37 by rmarkov          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef PHILO_H
 # define PHILO_H
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <sys/time.h>
-#include <unistd.h>
-#include <pthread.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <sys/time.h>
+# include <unistd.h>
+# include <pthread.h>
 
 typedef struct s_config
 {
